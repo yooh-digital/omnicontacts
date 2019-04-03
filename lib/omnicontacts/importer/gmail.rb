@@ -185,7 +185,7 @@ module OmniContacts
       def current_user me, access_token, token_type
         return nil if me.nil?
         me = JSON.parse(me)
-        user = {:id => me['id'], :email => me['email'], :name => me['name'], :first_name => me['given_name'],
+        user = {:id => me['id'], :sub => me['sub'], :email => me['email'], :name => me['name'], :first_name => me['given_name'],
                 :last_name => me['family_name'], :gender => me['gender'], :birthday => birthday(me['birthday']), :profile_picture => me["picture"],
                 :access_token => access_token, :token_type => token_type
         }
